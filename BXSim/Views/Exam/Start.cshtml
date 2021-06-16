@@ -1,0 +1,56 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model ExamControllerViewModel
+
+<div class="container">
+    <div class="row">
+        <div class="col align-self-center">
+
+            @foreach (ExamItem item in Model.Questions)
+            {
+            <div class="card my-3 shadow-lg">
+                <div class="card-body">
+                    <p class="card-text">@item.Statement</p>
+                </div>
+
+                <div class="btn-group-vertical btn-group-toggle mx-5 mt-1 mb-2" data-toggle="buttons">
+
+                    @foreach (string option in item.Options)
+                    {
+                    <label id="@(item.Id)_@(option.GetHashCode())" class="btn btn-outline-secondary text-left border-0" onclick="CheckAnswer('@item.Answer', '@option', '@(item.Id)_@(option.GetHashCode())')">
+                        <input type="radio" name="@item.Id" value="@option" />
+                        @option
+                    </label>
+
+                    }
+                </div>
+            </div>
+            }
+            <div class="card my-3 shadow-lg">
+                <div class="card-body">
+                    <p class="card-text">You have an Azure subscription named Subscription1 You sign in to Azure portal and create a resource group named RG1.</p>
+                    <p class="card-text">From Azure documentation, you have the folloing command that creates a virtual machine named VM1.</p>
+                    <code>az vm create --resource-group RG1 -name VM1 --image UbuntuLTS --generate-ssh-keys</code>
+                    <p>You need to create VM1 in Subscription1 by using the command.</p>
+                    <p>Solution: From the Azure portal, launch Azure Cloud Shell and select Bash, run the command in Cloud Shell, Does this meet the goal?</p>
+                </div>
+
+                <div class="btn-group-vertical btn-group-toggle mx-5 mt-1 mb-2" data-toggle="buttons">
+
+                    <label id="special_003052" class="btn btn-outline-secondary text-left border-0" onclick="CheckAnswer('No', 'Yes', 'special_003052')">
+                        <input type="radio" name="special_003052" value="Yes" />
+                        Yes
+                    </label>
+                    <label id="special_009041" class="btn btn-outline-secondary text-left border-0" onclick="CheckAnswer('No', 'No', 'special_009041')">
+                        <input type="radio" name="special_003052" value="No" />
+                        No
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
