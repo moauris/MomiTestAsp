@@ -23,6 +23,7 @@ namespace BXSim.Controllers
 
         public IActionResult Start()
         {
+
             return View(new ExamControllerViewModel {
                 Questions = repository.Questions.ShuffleItems() });
         }

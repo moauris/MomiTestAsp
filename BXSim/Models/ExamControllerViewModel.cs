@@ -8,6 +8,6 @@ namespace BXSim.Models
 {
     public class ExamControllerViewModel
     {
-        public IEnumerable<ExamItem> Questions { get; set; }
+        public IEnumerable<IExamItem> Questions { get; set; }
     }
 }

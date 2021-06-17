@@ -7,10 +7,11 @@ namespace BXSim.Extensions
 {
     public static class ListExtensions
     {
-        public static IList<T> ShuffleItems<T>(this IList<T> list)
+        public static IEnumerable<T> ShuffleItems<T>(this IEnumerable<T> list)
         {
             Random r = new Random();
-            return list.OrderBy(x => r.Next()).ToList();
+            return list.OrderBy(x => r.Next());
         }
+
     }
 }

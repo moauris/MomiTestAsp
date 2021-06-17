@@ -7,6 +7,6 @@ namespace BXSim.Data
 {
     public interface IExamRepo
     {
-        public List<ExamItem> Questions { get; }
+        public List<IExamItem> Questions { get; }
     }
 }
