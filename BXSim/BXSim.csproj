@@ -6,15 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="BXSim.db" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="BXSim.db">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    <Content Include="BXSim.db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </Content>
     <Content Include="BXSim.db-shm" />
     <Content Include="BXSim.db-wal" />
   </ItemGroup>
