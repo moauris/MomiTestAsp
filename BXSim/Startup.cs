@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore.SqlServer;
+using Microsoft.EntityFrameworkCore;
 
 namespace BXSim
 {
@@ -25,6 +27,14 @@ namespace BXSim
         {
             services.AddControllersWithViews();
             services.AddScoped<IExamRepo, ExamRepo>();
+            services.AddDbContext<BXSimDbContext>(opts =>
+            {
+                string connStr =
+                    Configuration.GetConnectionString("BXSimDb");
+                opts.UseSqlite(connStr);
+            });
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +62,8 @@ namespace BXSim
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            app.EnsurePopulated();
         }
     }
 }
