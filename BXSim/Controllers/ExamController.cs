@@ -21,11 +21,15 @@ namespace BXSim.Controllers
             return View();
         }
 
-        public IActionResult Start()
+        public IActionResult Bx900()
         {
 
             return View(new ExamControllerViewModel {
                 Questions = repository.Questions.ShuffleItems() });
+        }
+        public IActionResult Bx104()
+        {
+            return View(repository.Scenarios.AsEnumerable());
         }
     }
 }

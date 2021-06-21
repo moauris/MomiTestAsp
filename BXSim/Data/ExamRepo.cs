@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,6 +8,11 @@ namespace BXSim.Data
 {
     public class ExamRepo : IExamRepo
     {
+        private BXSimDbContext context;
+        public ExamRepo(BXSimDbContext ctx)
+        {
+            context = ctx;
+        }
         public List<IExamItem> Questions
         {
             get
@@ -454,5 +460,7 @@ namespace BXSim.Data
                 };
             }
         }
+
+        public IEnumerable<QuizScenario> Scenarios => context.QuizScenarios.Include(q => q.Quizzes);
     }
 }

@@ -63,7 +63,7 @@ namespace BXSim
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            app.EnsurePopulated();
+            //app.EnsurePopulated();
         }
     }
 }

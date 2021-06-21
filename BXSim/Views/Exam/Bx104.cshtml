@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<QuizScenario>
+
+<div class="container">
+    <div class="row">
+        <div class="col align-self-center">
+            @foreach (QuizScenario scenario in Model)
+            {
+            <div class="card my-3 shadow">
+                <div class="card-header mt-5">
+                    <!--Show Scenario partial here-->
+                    <partial name="@scenario.ScenarioPartial" />
+                </div>
+                <!--Generate questions-->
+                @foreach (Quiz quiz in scenario.Quizzes)
+                {
+                    <div class="card-body">
+                        <p>@quiz.Statement</p>
+
+                    </div>
+                    <div class="btn-group-vertical btn-group-toggle mx-2 mt-0 mb-2"
+                         data-toggle="buttons">
+                        @foreach (string opt in quiz.Options)
+                        {
+                            <label id="@(quiz.QuizID)_@(opt.GetHashCode())"
+                                   class="btn btn-outline-secondary text-left border-0">
+                                <input type="radio" name="option_@quiz.QuizID" value="@opt" />
+                                @opt
+                            </label>
+                        }
+
+                    </div>
+                 }
+            </div>
+            }
+        </div>
+    </div>
+</div>

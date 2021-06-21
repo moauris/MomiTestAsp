@@ -8,5 +8,6 @@ namespace BXSim.Data
     public interface IExamRepo
     {
         public List<IExamItem> Questions { get; }
+        public IEnumerable<QuizScenario> Scenarios { get; }
     }
 }
