@@ -7,10 +7,18 @@
 
   <ItemGroup>
     <None Remove="BXSim.db" />
+    <None Remove="BXSim.db-shm" />
+    <None Remove="BXSim.db-wal" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="BXSim.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BXSim.db-shm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BXSim.db-wal">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
