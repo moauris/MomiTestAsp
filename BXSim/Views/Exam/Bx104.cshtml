@@ -27,7 +27,8 @@
                         @foreach (string opt in quiz.Options)
                         {
                             <label id="@(quiz.QuizID)_@(opt.GetHashCode())"
-                                   class="btn btn-outline-secondary text-left border-0">
+                                   class="btn btn-outline-secondary text-left border-0"
+                                   onclick="ValidateOption(@(quiz.Answers.Contains(opt).ToString().ToLower()), '@(quiz.QuizID)_@(opt.GetHashCode())')">
                                 <input type="radio" name="option_@quiz.QuizID" value="@opt" />
                                 @opt
                             </label>

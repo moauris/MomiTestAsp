@@ -13,3 +13,9 @@ function CheckAnswer(correctAns, selectedAns, labelId) {
         'text-left', 'border-0'].join(' ');
     return;
 }
+
+function ValidateOption(isValid, labelId) {
+    document.getElementById(labelId).classList = ['btn',
+        isValid ? 'btn-success' : 'btn-danger',
+        'text-left', 'border-0'].join(' ');
+}
