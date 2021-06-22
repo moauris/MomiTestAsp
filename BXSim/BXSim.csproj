@@ -6,11 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="BXSim.db">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="BXSim.db-shm" />
-    <Content Include="BXSim.db-wal" />
   </ItemGroup>
 
   <ItemGroup>
