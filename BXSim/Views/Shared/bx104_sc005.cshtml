@@ -17,5 +17,238 @@
 <p>User3 is the owner of Group1.</p>
 <p>Group2 is a member of Group1.</p>
 <p>You configure an access review named Review1 as shown in the folloing exhibit:</p>
-<img class="img-fluid" src="~/img/bx104_sc005_img1.jpg" alt="Access Review" />
-<p>For the following statement, select Yes if the statment is true, Otherwise, select No.</p>
+<!--Replacement for the watermarked img-->
+        <div class="card align-self-center shadow-sm" 
+        style="width: 628px;">
+            <div class="card-header bg-dark text-white">
+                <h4>Create an access review</h4>
+            </div>
+            <div class="card-body">
+                <p>Access reivews enable reviewers to attest user's membershipt in a group or access to an application.</p>
+                <table>
+                    <tr>
+                        <td>
+                            <p>
+                                <b style="color: red;">*</b>
+                                <span style="color:gray;">Review name</span>
+                            </p>
+                        </td>
+                        <td>
+                            <input type="text"
+                                style="width:448px;padding-left:5px;
+                                margin-left:10px;
+                                margin-bottom:10px;"
+                                value="Review1" readonly/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style="color:gray;">Description</span>
+                        </td>
+                        <td>
+                            <input type="text"
+                                style="width:448px;height:87px;float:right;padding-left:5px;
+                                margin-bottom:10px;"
+                                value="" readonly/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <b style="color: red;">*</b>
+                                <span style="color:gray;">Start date</span>
+                            </p>
+                        </td>
+                        <td>
+                            <input type="text"
+                                style="width:448px;padding-left:5px;
+                                margin-left:10px;
+                                margin-bottom:10px;"
+                                value="2018-11-22" readonly/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <span style="color:gray;">Frequency</span>
+                            </p>
+                        </td>
+                        <td>
+                            <select type="option"
+                                style="width:448px;padding-left:5px;
+                                margin-left:10px;
+                                margin-bottom:10px;"
+                                value="One time" readonly>
+                                <option selected>One time</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <span style="color:gray;">Duration(in days)</span>
+                            </p>
+                        </td>
+                        <td>
+                            <svg width="420px" height="18px">
+                                <circle cx="18px" cy="9px" r="5px"
+                                stroke="darkgray" stroke-width="2px"
+                                fill="lightgray"/>
+                                <line x1="23px" y1="9px" x2="360px" y2="9px" style="stroke:darkgray;stroke-width:2px;"/>
+                                <rect x="380px" y="0px" width="25px" height="18px" style="fill:lightgray"/>
+                                <text x="388px" y="15px" fill="darkgray">1</text>
+                            </svg>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <b style="color: red;">*</b>
+                                <span style="color:gray;">Number of times</span>
+                            </p>
+                        </td>
+                        <td>
+                            <input type="text"
+                                style="width:448px;padding-left:5px;
+                                margin-left:10px;
+                                margin-bottom:10px;"
+                                value="0" disabled/>
+                        </td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <b style="color: red;">*</b>
+                                <span style="color:gray;">End date</span>
+                            </p>
+                        </td>
+                        <td>
+                            <input type="text"
+                                style="width:448px;padding-left:5px;
+                                margin-left:10px;
+                                margin-bottom:10px;"
+                                value="2018-12-22" readonly/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <h3>Users</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <span>Users to review</span>
+                            </p>
+                        </td>
+                        <td>
+                            <select type="option"
+                                style="width:448px;padding-left:5px;
+                                margin-left:10px;
+                                margin-bottom:10px;"
+                                value="One time" readonly>
+                                <option selected>Members of a group</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">
+                            <p>
+                                <span>Scope</span>
+                            </p>
+                        </td>
+                        <td>
+                            <input type="radio" name="bx104_sc5_gp1"
+                            checked
+                            disabled/>
+                            <label>Guest users only</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="radio" name="bx104_sc5_gp1"
+                            disabled/>
+                            <label>Everyone</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <svg width="588" height="16">
+                                <line x1="0" y1="8" 
+                                x2="588" y2="8"
+                                stroke="darkgray" stroke-width="3"/>
+                            </svg>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b style="color: red;">*</b>
+                            <span>Group</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4>Group1</h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <svg width="588" height="16">
+                                <line x1="0" y1="8" 
+                                x2="588" y2="8"
+                                stroke="darkgray" stroke-width="3"/>
+                            </svg>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4>Reviewers</h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <span style="color:gray;">Reviewers</span>
+                            </p>
+                        </td>
+                        <td>
+                            <select type="option"
+                                style="width:448px;padding-left:5px;
+                                margin-left:10px;
+                                margin-bottom:10px;"
+                                value="One time" readonly>
+                                <option selected>Group owners</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4>Programs</h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <svg width="588" height="16">
+                                <line x1="0" y1="8" 
+                                x2="588" y2="8"
+                                stroke="darkgray" stroke-width="3"/>
+                            </svg>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b style="color: red;">*</b>
+                            <span>Link to program</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <h4>Default programs</h4>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+<p class="mt-3">For the following statement, select Yes if the statment is true, Otherwise, select No.</p>
