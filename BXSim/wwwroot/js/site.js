@@ -3,19 +3,56 @@
 
 // Write your JavaScript code.
 
-function CheckAnswer(correctAns, selectedAns, labelId) {
-    console.log(`The answer to this question is ${correctAns}`);
-    console.log(`User selected ${selectedAns}`);
-    console.log(`User answer is ${correctAns === selectedAns ? "Correct" : "Incorrect"}`);
+var multiOptQuizzes = {};
 
+function CheckAnswer(correctAns, selectedAns, labelId) {
     document.getElementById(labelId).classList = ['btn',
         correctAns === selectedAns ? 'btn-success' : 'btn-danger',
         'text-left', 'border-0'].join(' ');
     return;
 }
 
-function ValidateOption(isValid, labelId) {
-    document.getElementById(labelId).classList = ['btn',
-        isValid ? 'btn-success' : 'btn-danger',
-        'text-left', 'border-0'].join(' ');
+function ValidateOption(isValid, labelId, quizId, numOpts) {
+    if (multiOptQuizzes[quizId] === undefined) {
+        multiOptQuizzes[quizId] = new MultiOptQuiz(quizId, numOpts);
+    }
+    var quiz = multiOptQuizzes[quizId];
+
+    if (quiz.tries === 0) return;
+    quiz.tries--;
+    var colorCssClass = "btn-danger";
+    if (isValid) {
+        quiz.optionsLeft--;
+        quiz.partiallyCorrectPeers.push(labelId);
+        console.log(`There are ${quiz.optionsLeft} correct options left to be selected`)
+        console.log(`${quiz.optionsLeft > 0}`)
+        if (quiz.optionsLeft > 0) {
+            console.log("The answer is valid but still opptions left");
+            colorCssClass = "btn-warning";
+        } else {
+
+            console.log("The answer is valid and no opptions left");
+            colorCssClass = "btn-success";
+            quiz.isAnswerCompleted = true;
+        }
+        quiz.partiallyCorrectPeers.forEach(x => {
+            document.getElementById(x).classList = ['btn',
+                colorCssClass,
+                'text-left', 'border-0'].join(' ');
+        });
+    } else {
+        document.getElementById(labelId).classList = ['btn',
+            colorCssClass,
+            'text-left', 'border-0'].join(' ');
+    }
+    
+}
+
+class MultiOptQuiz {
+    constructor(quizId, optionsLeft) {
+        this.quizId = quizId;
+        this.optionsLeft = optionsLeft;
+        this.tries = optionsLeft;
+        this.partiallyCorrectPeers = [];
+    }
 }
