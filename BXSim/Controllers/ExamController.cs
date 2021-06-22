@@ -29,7 +29,7 @@ namespace BXSim.Controllers
         }
         public IActionResult Bx104()
         {
-            return View(repository.Scenarios.AsEnumerable());
+            return View(repository.Scenarios.AsEnumerable().Reverse());
         }
     }
 }

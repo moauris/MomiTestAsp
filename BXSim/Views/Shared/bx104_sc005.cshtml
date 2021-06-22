@@ -1,15 +1,19 @@
 ﻿<p>You have an Azure AD tenant named contoso.com that contains the users shown in the following table:</p>
-<table class="table table-bordered table-striped">
-    <thead class="table-info">
-        <tr><th>Name</th><th>Type</th><th>Member of</th></tr>
-    </thead>
-    <tbody>
-        <tr><td>User1</td><td>Global administrator</td><td>Azure Active Directory</td></tr>
-        <tr><td>User2</td><td>Global administrator</td><td>Azure Active Directory</td></tr>
-        <tr><td>User3</td><td>User administrator</td><td>Azure Active Directory</td></tr>
-        <tr><td>User4</td><td>Owner</td><td>Azure Subscription</td></tr>
-    </tbody>
-</table>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead class="table-info">
+            <tr><th>Name</th><th>Type</th><th>Member of</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>User1</td><td>Member</td><td>Group1</td></tr>
+            <tr><td>User2</td><td>Guest</td><td>Group1</td></tr>
+            <tr><td>User3</td><td>Member</td><td>None</td></tr>
+            <tr><td>UserA</td><td>Member</td><td>Group2</td></tr>
+            <tr><td>UserB</td><td>Guest</td><td>Group2</td></tr>
+        </tbody>
+    </table>
+</div>
 <p>User3 is the owner of Group1.</p>
 <p>Group2 is a member of Group1.</p>
 <p>You configure an access review named Review1 as shown in the folloing exhibit:</p>

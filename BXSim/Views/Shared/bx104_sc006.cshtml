@@ -1,33 +1,42 @@
 ﻿<p>You have Azure management groups shown in the following table:</p>
-<table class="table table-bordered table-striped">
-    <thead class="table-info">
-        <tr><th>Name</th><th>In management group</th></tr>
-    </thead>
-    <tbody>
-        <tr><td>Tenant Root Group</td><td>Not applicable</td></tr>
-        <tr><td>ManagementGroup11</td><td>Tenant Root Group</td></tr>
-        <tr><td>ManagementGroup12</td><td>Tenant Root Group</td></tr>
-        <tr><td>ManagementGroup21</td><td>ManagementGroup11</td></tr>
-    </tbody>
-</table>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead class="table-info">
+            <tr><th>Name</th><th>In management group</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Tenant Root Group</td><td><i>Not applicable</i></td></tr>
+            <tr><td>ManagementGroup11</td><td>Tenant Root Group</td></tr>
+            <tr><td>ManagementGroup12</td><td>Tenant Root Group</td></tr>
+            <tr><td>ManagementGroup21</td><td>ManagementGroup11</td></tr>
+        </tbody>
+    </table>
+</div>
 <p>You add Azure subscriptions to the management groups as shown in the following table:</p>
-<table class="table table-bordered table-striped">
-    <thead class="table-info">
-        <tr><th>Name</th><th>Management group</th></tr>
-    </thead>
-    <tbody>
-        <tr><td>Subscription1</td><td>ManagementGroup21</td></tr>
-        <tr><td>Subscription2</td><td>ManagementGroup12</td></tr>
-    </tbody>
-</table>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead class="table-info">
+            <tr><th>Name</th><th>Management group</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Subscription1</td><td>ManagementGroup21</td></tr>
+            <tr><td>Subscription2</td><td>ManagementGroup12</td></tr>
+        </tbody>
+    </table>
+</div>
 <p>You create the Azure policies shown in the following table:</p>
-<table class="table table-bordered table-striped">
-    <thead class="table-info">
-        <tr><th>Name</th><th>Parameter</th><th>Scope</th></tr>
-    </thead>
-    <tbody>
-        <tr><td>Not allowed resource types</td><td>virtualNetworks</td><td>Tenant Root Group</td></tr>
-        <tr><td>Allowed resource types</td><td>virtualNetworks</td><td>ManagementGroup12</td></tr>
-    </tbody>
-</table>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead class="table-info">
+            <tr><th>Name</th><th>Parameter</th><th>Scope</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Not allowed resource types</td><td>virtualNetworks</td><td>Tenant Root Group</td></tr>
+            <tr><td>Allowed resource types</td><td>virtualNetworks</td><td>ManagementGroup12</td></tr>
+        </tbody>
+    </table>
+</div>
 <p>For each of the following statements, select Yes if the statment is true. Otherwise, select No.</p>

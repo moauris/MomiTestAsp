@@ -23,10 +23,10 @@
 
                     </div>
                     <div class="btn-group-vertical mx-2 mt-0 mb-2">
-                        @foreach (string opt in quiz.Options)
+                        @foreach (string opt in quiz.Options.ShuffleItems())
                         {
                             <label id="@(quiz.QuizID)_@(opt.GetHashCode())"
-                                   class="btn btn-outline-secondary text-left border-0"
+                                   class="btn btn-outline-secondary text-left"
                                    onclick="ValidateOption(@(quiz.Answers.Contains(opt).ToString().ToLower()), '@(quiz.QuizID)_@(opt.GetHashCode())', @quiz.QuizID, @quiz.Answers.Count())">
                                 <!--input type="radio" name="option_@quiz.QuizID" value="@opt" /-->
                                 @opt

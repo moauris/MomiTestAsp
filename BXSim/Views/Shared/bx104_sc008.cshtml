@@ -1,0 +1,31 @@
+﻿<p>You have an Azure subscription that contains the resources shown in the following table:</p>
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead class="table-info">
+            <tr><th>Name</th><th>Type</th><th>Resource group</th><th>Tag</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>RG6</td><td>Resource group</td><td><i>Not applicable</i></td><td><i>None</i></td></tr>
+            <tr><td>VNET1</td><td>Virtual network</td><td>RG6</td><td>Department:D1</td></tr>
+        </tbody>
+    </table>
+</div>
+<p>You assign a policy to RG6 as shown in the following table:</p>
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead class="table-info">
+            <tr><th>Section</th><th>Setting</th><th>Value</th></tr>
+        </thead>
+        <tbody>
+            <tr><th class="thead-light" rowspan="2">Scope</th><td>Scope</td><td>Subscription1/RG6</td></tr>
+            <tr><td>Exclusions</td><td><i>None</i></td></tr>
+            <tr><th class="thead-light" rowspan="2">Basics</th><td>Policy definition</td><td>Apply tag and its default value</td></tr>
+            <tr><td>Assignment name</td><td>Apply tag and its default value</td></tr>
+            <tr><th class="thead-light" rowspan="2">Parameters</th><td>Tag name</td><td>Label</td></tr>
+            <tr><td>Tag Value</td><td>Value1</td></tr>
+        </tbody>
+    </table>
+</div>
+<p>To RG6, you apply the tag: RGroup:RG6.</p>
+<p>You deploy a virtual network named VNET2 to RG6.</p>
+<p>Which tags apply to VNET1 and VNET2?</p>

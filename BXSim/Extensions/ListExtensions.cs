@@ -9,6 +9,10 @@ namespace BXSim.Extensions
     {
         public static IEnumerable<T> ShuffleItems<T>(this IEnumerable<T> list)
         {
+            if (list.Count() == 2)
+            {
+                return list;
+            }
             Random r = new Random();
             return list.OrderBy(x => r.Next());
         }
