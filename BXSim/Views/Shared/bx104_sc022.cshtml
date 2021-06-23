@@ -1,0 +1,77 @@
+﻿<p>You have an Azure subscription that contains a virtual network named VNET1 in the East US 2 region. A network interface named VM1-NI is connected to VNET1</p>
+<p>You successfully deploy the following resources in an Azure Resource Manager template.</p>
+<div class="pre-scrollable h-50 bg-dark mb-2 pl-2">
+<pre><code class="text-white">
+{
+    "apiVersion":"2017-03-30",
+    "type":"Microsoft.Compute/virtualMachines",
+    "name":"VM1",
+    "zones":"1",
+    "location":"EastUS2",
+    "dependsOn":[
+        "[resourceId('Microsoft.Network/networkInterfaces','VM1-NI')]"
+    ],
+    "properties":{
+        "hardwareProfile":{
+            "vmSize":"Standard_A2_v2"
+        },
+        "osProfile":{
+            "computerName":"VM1",
+            "adminUsername":"AzureAdmin",
+            "adminPassword":"[parameters('adminPassword')]"
+        },
+        "storageProfile":{
+            "imageReference":"[variables('image')]",
+            "osDisk":{
+                "createOption":"FromImage"
+            }
+        },
+        "networkProfile":{
+            "networkInterfaces":[
+                {
+                    "id":"[resourceId('Microsoft.Network/networkInterfaces','VM1-NI')]"
+                }
+            ]
+        }
+    }
+}
+</code></pre>
+</div>
+<div class="pre-scrollable h-50 bg-dark mb-2 pl-2">
+<pre><code class="text-white">
+{
+    "apiVersion":"2017-03-30",
+    "type":"Microsoft.Compute/virtualMachines",
+    "name":"VM2",
+    "zones":"2",
+    "location":"EastUS2",
+    "dependsOn":[
+        "[resourceId('Microsoft.Network/networkInterfaces','VM2-NI')]"
+    ],
+    "properties":{
+        "hardwareProfile":{
+            "vmSize":"Standard_A2_v2"
+        },
+        "osProfile":{
+            "computerName":"VM2",
+            "adminUsername":"AzureAdmin",
+            "adminPassword":"[parameters('adminPassword')]"
+        },
+        "storageProfile":{
+            "imageReference":"[variables('image')]",
+            "osDisk":{
+                "createOption":"FromImage"
+            }
+        },
+        "networkProfile":{
+            "networkInterfaces":[
+                {
+                    "id":"[resourceId('Microsoft.Network/networkInterfaces','VM2-NI')]"
+                }
+            ]
+        }
+    }
+}
+</code></pre>
+</div>
+<p>For each of the following statements, select Yes if the statement is true, Otherwise, select No.</p>

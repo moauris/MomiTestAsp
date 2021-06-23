@@ -23,7 +23,8 @@
                     <p>@quiz.Statement</p>
                 </div>
                 <div class="collapse" id="@(quiz.QuizID)_exp">
-                    <div class="card card-body bg-warning m-2 text-black-50">
+                    <div class="card card-body m-2"
+                         id="@(quiz.QuizID)_exp_card">
                         @(quiz.Explanation ?? "Explanation N/A")
                     </div>
                 </div>

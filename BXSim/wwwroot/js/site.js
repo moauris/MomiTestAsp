@@ -23,7 +23,15 @@ function ValidateOption(isValid, labelId, quizId, numOpts) {
     if (quiz.tries === 0) {
         //uncollapse the explanation on all answer supplied 
         //regardless of right or wrong
-        console.log("Trying to display collapsibles");
+
+        //judge if the question is answer correctly
+        //format card based on this
+        if (isValid) {
+            $(`#${quizId}_exp_card`).addClass(["bg-info", "text-white"]);
+        } else {
+
+            $(`#${quizId}_exp_card`).addClass(["bg-warning", "text-black-50"]);
+        }
         $(`#${quizId}_exp`).collapse('show');
     }
     var colorCssClass = "btn-danger";
