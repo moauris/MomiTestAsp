@@ -20,6 +20,12 @@ function ValidateOption(isValid, labelId, quizId, numOpts) {
 
     if (quiz.tries === 0) return;
     quiz.tries--;
+    if (quiz.tries === 0) {
+        //uncollapse the explanation on all answer supplied 
+        //regardless of right or wrong
+        console.log("Trying to display collapsibles");
+        $(`#${quizId}_exp`).collapse('show');
+    }
     var colorCssClass = "btn-danger";
     if (isValid) {
         quiz.optionsLeft--;
