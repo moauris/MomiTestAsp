@@ -1,0 +1,28 @@
+﻿<p>You have an Azure subscription named Subscription1 that has a subscription ID of 43f9a36a-0adf-4be1-b42c-86bfa837c5e0.</p>
+<p>You need to create a cutom RBAC role named CR1 that meets the following requirements:</p>
+<ul>
+    <li>Can be assigned only to the resource groups in Subscription1</li>
+    <li>Prevents the management of the access permissions for the resource groups</li>
+    <li>Allows the viewing, creating, modifying, and deleting of resources within the resource groups</li>
+</ul>
+<p>What should you specify in the assignable scopes and the permission elements of the definition of CR1?</p>
+<div class="pre-scrollable h-50 bg-dark mb-2 pl-2">
+    <pre>
+    <code class="text-white">
+"assignableScopes":[
+    $assignableScopes
+],
+"permissions":[
+    {
+        "actions":["*"],
+        "additionalProperties":{},
+        "dataActions":[],
+        "notActions":[
+            $notActions
+        ],
+        "notDataActions":[]
+    }
+],
+			</code>
+		</pre>
+</div>
