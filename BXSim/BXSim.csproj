@@ -5,19 +5,9 @@
     <UserSecretsId>156cd8d4-e1b7-4566-b098-d2e95732d762</UserSecretsId>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="BXSim.db-shm" />
-    <None Remove="BXSim.db-wal" />
-  </ItemGroup>
 
   <ItemGroup>
     <Content Include="BXSim.db">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="BXSim.db-shm">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="BXSim.db-wal">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

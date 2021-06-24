@@ -4,6 +4,7 @@
 // Write your JavaScript code.
 
 var multiOptQuizzes = {};
+var sequenceQuizzes = {};
 
 function CheckAnswer(correctAns, selectedAns, labelId) {
     document.getElementById(labelId).classList = ['btn',
@@ -68,5 +69,59 @@ class MultiOptQuiz {
         this.optionsLeft = optionsLeft;
         this.tries = optionsLeft;
         this.partiallyCorrectPeers = [];
+    }
+}
+
+class SequenceQuiz {
+    constructor(quizId, answerCount) {
+        this.quizId = quizId;
+        this.answerCount = answerCount;
+        this.isAnswerCompleted = false;
+        this.stillCorrect = true;
+    }
+    
+}
+
+// A Sequence is a series of answers where the order matters
+// This question validates based on $sequence
+// invalid = -1
+// 0,1,2.. meaning their respective sequence.
+function ValidateSequence(sequence, labelId, quizId, answerCount) {
+    if (!sequenceQuizzes[quizId])
+        sequenceQuizzes[quizId] = new SequenceQuiz(quizId, answerCount);
+    var quiz = sequenceQuizzes[quizId];
+
+    if (quiz.isAnswerCompleted) return;
+    //Add the content of the card value to step_quizId_i
+    var answer = $(`#${labelId}`).text();
+    $(`#step_${quizId}_${answerCount - quiz.answerCount}`).attr('value', answer);
+    $(`#${labelId}`).hide();
+
+    if (quiz.stillCorrect) {
+        if (sequence < 0) {
+            quiz.stillCorrect = false;
+        }
+        if (quiz.answerCount > 0) {
+            //if answers count 4
+            //when seq = 0, ans = 4, its correct
+            //when seq = 1, ans = 3, its correct
+            //when seq = 2, ans = 2, its correct.
+            quiz.stillCorrect = (sequence + quiz.answerCount) === answerCount;
+        }
+    }
+    quiz.answerCount--;
+    if (!quiz.answerCount) {
+        //no answers left to answer, render results
+        //$(`#${label}`).removeClass('btn-outline-secondary');
+        if (quiz.stillCorrect) {
+            $(`#step_${quizId} span,#step_${quizId} input`).addClass(["bg-success", "text-white"]);
+            $(`#${quizId}_exp_card`).addClass(["bg-info", "text-white"]);
+        } else {
+            $(`#step_${quizId} span,#step_${quizId} input`).addClass(["bg-danger","text-white"]);
+            $(`#${quizId}_exp_card`).addClass(["bg-warning", "text-black-50"]);
+        }
+
+        $(`#${quizId}_exp`).collapse('show');
+        quiz.isAnswerCompleted = true;
     }
 }

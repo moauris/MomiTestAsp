@@ -17,5 +17,16 @@ namespace BXSim.Extensions
             return list.OrderBy(x => r.Next());
         }
 
+        public static int GetIndex(this IEnumerable<string> list, string input)
+        {
+            int i = 0;
+            foreach (string s in list)
+            {
+                if (s == input) return i;
+                i++;
+            }
+            return -1;
+        }
+
     }
 }

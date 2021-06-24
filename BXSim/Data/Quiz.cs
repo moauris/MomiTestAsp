@@ -12,6 +12,16 @@ namespace BXSim.Data
         public string StatementPartial { get; set; }
         public IEnumerable<string> Answers { get; set; }
         public IEnumerable<string> Options { get; set; }
+        public SpecialQuiz QuizType { get; set; } = SpecialQuiz.Normal;
         public string Explanation { get; set; }
+    }
+    /// <summary>
+    /// Enum for Special Quizze.
+    /// </summary>
+    /// 
+    public enum SpecialQuiz
+    {
+        Normal = 0,
+        Sequential = 1
     }
 }
