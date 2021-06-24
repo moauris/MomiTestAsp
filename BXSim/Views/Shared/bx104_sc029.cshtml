@@ -1,0 +1,58 @@
+﻿<p>You have an Azure AD tenant named adatum.com.</p>
+<p>Adatum.com contains the groups in the following table.</p>
+<table class="table table-bordered">
+    <thead class="thead-light">
+        <tr>
+            <th>Name</th>
+            <th>Group type</th>
+            <th>Membership type</th>
+            <th>Membership rule</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Group1</td>
+            <td>Security</td>
+            <td>Dynamic user</td>
+            <td>(user.city -startWith &quot;m&quot;)</td>
+        </tr>
+        <tr>
+            <td>Group2</td>
+            <td>Microsoft Office 365</td>
+            <td>Dynamic user</td>
+            <td>(user.department -notIn [&quot;human resource&quot;])</td>
+        </tr>
+        <tr>
+            <td>Group3</td>
+            <td>Microsoft Office 365</td>
+            <td>Assigned</td>
+            <td><i>Not applicable</i></td>
+        </tr>
+    </tbody>
+</table>
+<p>You create two user accounts that are configured as shown in the following table.</p>
+<table class="table table-bordered">
+    <thead class="thead-light">
+        <tr>
+            <th>Name</th>
+            <th>City</th>
+            <th>Department</th>
+            <th>Office 365 license assigned</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>User1</td>
+            <td>Montreal</td>
+            <td>Human resources</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>User2</td>
+            <td>Melbourne</td>
+            <td>Marketing</td>
+            <td>No</td>
+        </tr>
+    </tbody>
+</table>
+<p>Identify to which group User1 and User2 belong.</p>
