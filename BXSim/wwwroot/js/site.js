@@ -94,7 +94,12 @@ function ValidateSequence(sequence, labelId, quizId, answerCount) {
     if (quiz.isAnswerCompleted) return;
     //Add the content of the card value to step_quizId_i
     var answer = $(`#${labelId}`).text();
-    $(`#step_${quizId}_${answerCount - quiz.answerCount}`).attr('value', answer);
+    $(`#step_${quizId}_${answerCount - quiz.answerCount}`)
+        .html(answer);
+    $(`#step_${quizId}_${answerCount - quiz.answerCount}`)
+        .removeClass("btn-secondary");
+    $(`#step_${quizId}_${answerCount - quiz.answerCount}`)
+        .addClass("btn-outline-secondary");
     $(`#${labelId}`).hide();
 
     if (quiz.stillCorrect) {
@@ -114,10 +119,10 @@ function ValidateSequence(sequence, labelId, quizId, answerCount) {
         //no answers left to answer, render results
         //$(`#${label}`).removeClass('btn-outline-secondary');
         if (quiz.stillCorrect) {
-            $(`#step_${quizId} span,#step_${quizId} input`).addClass(["bg-success", "text-white"]);
+            $(`#step_${quizId} label`).addClass(["bg-success", "text-white"]);
             $(`#${quizId}_exp_card`).addClass(["bg-info", "text-white"]);
         } else {
-            $(`#step_${quizId} span,#step_${quizId} input`).addClass(["bg-danger","text-white"]);
+            $(`#step_${quizId} label`).addClass(["bg-danger","text-white"]);
             $(`#${quizId}_exp_card`).addClass(["bg-warning", "text-black-50"]);
         }
 

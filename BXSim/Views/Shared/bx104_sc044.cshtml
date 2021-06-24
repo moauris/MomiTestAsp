@@ -1,0 +1,29 @@
+﻿<p>You have an Azure subscription that contains two virtual networks named VNet1 and VNet2.</p>
+<p>Virtual machines connect to the virtual networks.</p>
+<p>The virtual networks have the address spaces and the subnets configured as shown in the following table.</p>
+<table class="table table-bordered table-responsive">
+    <thead class="thead-light">
+        <tr>
+            <th>Virtual network</th>
+            <th>Address space</th>
+            <th>Subnet</th>
+            <th>Peering</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>VNet1</td>
+            <td>10.1.0.0/16</td>
+            <td>10.1.0.0/24<br />10.1.1.0/26</td>
+            <td>VNet2</td>
+        </tr>
+        <tr>
+            <td>VNet2</td>
+            <td>10.2.0.0/16</td>
+            <td>10.2.0.0/24</td>
+            <td>VNet1</td>
+        </tr>
+    </tbody>
+</table>
+<p>You need to add the address space of 10.33.0.0/16 to VNet1.</p>
+<p>The solution must ensure that the hosts on VNet1 and VNet2 can communicate.</p>
