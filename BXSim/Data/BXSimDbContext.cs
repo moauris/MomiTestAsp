@@ -13,8 +13,9 @@ namespace BXSim.Data
             
             Database.EnsureCreated();
         }
-        public DbSet<QuizScenario> QuizScenarios { get; set; }
+
         public DbSet<Quiz> Quizzes { get; set; }
+        public DbSet<QuizScenario> QuizScenarios { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
