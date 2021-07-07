@@ -38,7 +38,9 @@ CREATE TABLE IF NOT EXISTS rel_optionquiz (
 
 INSERT INTO tbl_practicesets (PracticeName, PracticeIntroPage) VALUES (
     'Technical Rehydration - C# CLR',
-    '<p>Technical Rehydration series are designed to quickly pick-up knowledge points from past learning sessions.</p><p>For this particular practice set we focus on the CLR mechanisms in C#. Most knowledge points can be found in the book <i>CLR via C#</i>.</p>'
+    '<p>Technical Rehydration series are designed to quickly pick-up knowledge points from past learning sessions.</p>
+    <p>For this particular practice set we focus on the CLR mechanisms in C#.</p>
+    <p>Most knowledge points can be found in the book <i>CLR via C#</i>.</p>'
 );
 
 INSERT INTO tbl_scenarios (ScenarioPage, PracticeID) VALUES (
@@ -91,8 +93,33 @@ INSERT INTO rel_OptionQuiz (QuizID, OptionID, AnswerState) VALUES (
     @quiz_id, @opts_id, -1
 );
 
+INSERT INTO tbl_practicesets (PracticeName, PracticeIntroPage) VALUES (
+    'Dynamics 365 - Set I',
+    '<p>Fundamental Level Learning Material for Microsoft Dynamics 365</p>'
+);
+
+INSERT INTO tbl_practicesets (PracticeName, PracticeIntroPage) VALUES (
+    'AZ900 - Cert Prep',
+    '<p>Want to pass the AZ900 Could Fundamentals Certificate Exam?</p>
+    <p>Practice on interactive quizzes.</p>
+    <p>Reinforce your knowledge.</p>'
+);
+
+INSERT INTO tbl_practicesets (PracticeName, PracticeIntroPage) VALUES (
+    'AZ104 - Cert Prep',
+    '<p>Want to pass the AZ104 Could Administrator Certificate Exam?</p>
+    <p>Practice on interactive quizzes.</p>
+    <p>Reinforce your knowledge.</p>'
+);
+
+
+
+
+
+
+
 SELECT * FROM tbl_quizzes q 
     INNER JOIN rel_optionquiz l ON (
-        q.id = l.QuizzesID) 
+        q.id = l.QuizID) 
     INNER JOIN tbl_options o ON (
         o.id = l.OptionID) \G

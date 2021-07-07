@@ -8,8 +8,7 @@ namespace BXSim.Data
 {
     public class PracticeSet
     {
-        [Column(TypeName = "id")]
-        public int PracticeSetID {get; set;}
+        public int id {get; set;}
         public string PracticeName { get; set; }
         public string PracticeIntroPage { get; set; }
     }
