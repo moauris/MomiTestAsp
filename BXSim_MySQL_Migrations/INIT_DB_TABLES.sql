@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS tbl_options (
 
 CREATE TABLE IF NOT EXISTS rel_optionquiz (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    QuizzesID INT NOT NULL REFERENCES tbl_quizzes(id)
+    QuizID INT NOT NULL REFERENCES tbl_quizzes(id)
         ON DELETE CASCADE,
     OptionID INT NOT NULL REFERENCES tbl_options(id)
         ON DELETE CASCADE,
@@ -60,7 +60,7 @@ INSERT INTO tbl_options (Content) VALUES (
 );
 
 SET @opts_id:=(SELECT MAX(id) FROM tbl_options);
-INSERT INTO rel_OptionQuiz (QuizzesID, OptionID, AnswerState) VALUES (
+INSERT INTO rel_OptionQuiz (QuizID, OptionID, AnswerState) VALUES (
     @quiz_id, @opts_id, 0
 );
 
@@ -69,7 +69,7 @@ INSERT INTO tbl_options (Content) VALUES (
 );
 
 SET @opts_id:=(SELECT MAX(id) FROM tbl_options);
-INSERT INTO rel_OptionQuiz (QuizzesID, OptionID, AnswerState) VALUES (
+INSERT INTO rel_OptionQuiz (QuizID, OptionID, AnswerState) VALUES (
     @quiz_id, @opts_id, -1
 );
 
@@ -78,7 +78,7 @@ INSERT INTO tbl_options (Content) VALUES (
 );
 
 SET @opts_id:=(SELECT MAX(id) FROM tbl_options);
-INSERT INTO rel_OptionQuiz (QuizzesID, OptionID, AnswerState) VALUES (
+INSERT INTO rel_OptionQuiz (QuizID, OptionID, AnswerState) VALUES (
     @quiz_id, @opts_id, -1
 );
 
@@ -87,7 +87,7 @@ INSERT INTO tbl_options (Content) VALUES (
 );
 
 SET @opts_id:=(SELECT MAX(id) FROM tbl_options);
-INSERT INTO rel_OptionQuiz (QuizzesID, OptionID, AnswerState) VALUES (
+INSERT INTO rel_OptionQuiz (QuizID, OptionID, AnswerState) VALUES (
     @quiz_id, @opts_id, -1
 );
 
