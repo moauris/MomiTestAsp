@@ -13,22 +13,24 @@
             <div class="card my-3 shadow">
                 <div class="card-header mt-5">
                     <!--Show Scenario partial here-->
-                    <partial name="@scenario.ScenarioPartial" />
+                    @Html.Raw(scenario.ScenarioPage)
                 </div>
                 <!--Generate questions-->
                 @foreach (Quiz quiz in scenario.Quizzes)
                 {
-                    @switch (quiz.QuizType)
-                    {
-                        case SpecialQuiz.Normal:
-                            <partial name="MultipleChoice" model="quiz"/>
-                            break;
-                        case SpecialQuiz.Sequential:
-                            <partial name="SequentialChoice" model="quiz"/>
-                            break;
-                        default:
-                            break;
-                    }
+            <div class="card-body">
+
+                <p>@quiz.Question</p>
+
+                @foreach (RelQuizOption opt in quiz.RelQuizOptions)
+                {
+                    <div class="card-text">
+
+                        <p class="pull-left">@opt.Option.Content</p>
+                        <p class="pull-right">@opt.AnswerState</p>
+                    </div>
+                }
+            </div>
 
                 }
             </div>

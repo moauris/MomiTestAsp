@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using MySql.Data.EntityFramework;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,30 +10,17 @@ namespace BXSim.Data
 {
     public class BXSimDbContext : DbContext
     {
-        public BXSimDbContext(DbContextOptions<BXSimDbContext> opts) : base(opts) {
-            
-            Database.EnsureCreated();
-        }
+        public BXSimDbContext(DbContextOptions<BXSimDbContext> opts) : base(opts) {}
 
-        public DbSet<Quiz> Quizzes { get; set; }
-        public DbSet<QuizScenario> QuizScenarios { get; set; }
+        public DbSet<PracticeSet> tbl_practicesets { get; set; }
+        public DbSet<Quiz> tbl_quizzes { get; set; }
+        public DbSet<QuizScenario> tbl_scenarios { get; set; }
+        public DbSet<Option> tbl_options { get; set; }
+        public DbSet<RelQuizOption> rel_optionquiz { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Quiz>()
-                .Property(q => q.Answers)
-                .HasConversion(
-                    v => v.ToJsonString(),
-                    v => v.ToIEnumString()
-                );
-            modelBuilder.Entity<Quiz>()
-                .Property(q => q.Options)
-                .HasConversion(
-                    v => v.ToJsonString(),
-                    v => v.ToIEnumString()
-                );
-            modelBuilder.Entity<QuizScenario>()
-                .HasMany(c => c.Quizzes);
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore.SqlServer;
+using MySql.Data.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 
 namespace BXSim
@@ -30,8 +30,8 @@ namespace BXSim
             services.AddDbContext<BXSimDbContext>(opts =>
             {
                 string connStr =
-                    Configuration.GetConnectionString("BXSimDb");
-                opts.UseSqlite(connStr);
+                    Configuration.GetConnectionString("MySqlConnString");
+                opts.UseMySQL(connStr);
             });
 
 

@@ -1,4 +1,5 @@
-﻿using BXSim.Models;
+﻿using BXSim.Data;
+using BXSim.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,15 +13,17 @@ namespace BXSim.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private BXSimDbContext context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, BXSimDbContext ctx)
         {
             _logger = logger;
+            context = ctx;
         }
 
         public IActionResult Index()
         {
-            return View();
+            return View(context.tbl_practicesets);
         }
 
         public IActionResult Privacy()

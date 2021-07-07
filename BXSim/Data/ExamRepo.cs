@@ -461,6 +461,9 @@ namespace BXSim.Data
             }
         }
 
-        public IEnumerable<QuizScenario> Scenarios => context.QuizScenarios.Include(q => q.Quizzes);
+        public IEnumerable<QuizScenario> Scenarios => 
+            context.tbl_scenarios.Include(q => q.Quizzes)
+            .ThenInclude(rq => rq.RelQuizOptions)
+            .ThenInclude(opt => opt.Option);
     }
 }
