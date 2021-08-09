@@ -13,7 +13,7 @@
             <div class="card my-3 shadow">
                 <div class="card-header mt-5">
                     <!--Show Scenario partial here-->
-                    @Html.Raw(scenario.ScenarioPage)
+                    @Html.Raw(scenario.PageText)
                 </div>
                 <!--Generate questions-->
                 @foreach (Quiz quiz in scenario.Quizzes)

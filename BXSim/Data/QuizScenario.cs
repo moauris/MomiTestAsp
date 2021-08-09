@@ -10,7 +10,7 @@ namespace BXSim.Data
     {
         [Column("id")]
         public int QuizScenarioID { get; set; }
-        public string ScenarioPage { get; set; }
+        public string PageText { get; set; }
         public virtual IEnumerable<Quiz> Quizzes { get; set; }
     }
 }

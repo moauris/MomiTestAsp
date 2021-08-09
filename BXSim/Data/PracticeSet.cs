@@ -9,7 +9,8 @@ namespace BXSim.Data
     public class PracticeSet
     {
         public int id {get; set;}
-        public string PracticeName { get; set; }
-        public string PracticeIntroPage { get; set; }
+        public string Code { get; set; }
+        public string Title { get; set; }
+        public string IntroPage { get; set; }
     }
 }
